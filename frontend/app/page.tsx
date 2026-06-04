@@ -144,7 +144,6 @@ export default function Home() {
         >
           <div className="showcase">
             <div className="card-generated">
-              <div className="card-top-accent" />
               <div className="card-inner">
                 <div className="card-photo-area">
                   <div className="photo-placeholder" />

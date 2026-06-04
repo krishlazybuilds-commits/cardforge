@@ -359,17 +359,13 @@ h1 em {
   width: 280px;
   border-radius: 16px;
   background: var(--card-bg);
+  border: 1.5px solid rgba(38, 70, 83, 0.08);
   box-shadow:
     0 2px 4px rgba(38, 70, 83, 0.04),
     0 12px 40px rgba(38, 70, 83, 0.1);
   overflow: hidden;
   transform: rotate(-2deg);
   z-index: 2;
-}
-
-.card-top-accent {
-  height: 6px;
-  background: linear-gradient(90deg, var(--teal), var(--gold), var(--sienna));
 }
 
 .card-inner {
