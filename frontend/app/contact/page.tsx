@@ -3,7 +3,6 @@
 import { ArrowLeft, Mail, Send } from "lucide-react";
 import { motion } from "motion/react";
 import { useState } from "react";
-import Preloader from "../preloader";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -23,7 +22,6 @@ export default function Contact() {
   }
 
   return (
-    <Preloader title="Get in Touch" tagline="I'd love to hear from you">
     <main className="landing">
       {/* Nav */}
       <motion.nav
@@ -156,6 +154,5 @@ export default function Contact() {
         </div>
       </footer>
     </main>
-    </Preloader>
   );
 }
