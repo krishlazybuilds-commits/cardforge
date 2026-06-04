@@ -258,6 +258,7 @@ h1 em {
 }
 
 .btn-primary {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -268,13 +269,69 @@ h1 em {
   background: var(--sienna);
   border-radius: 10px;
   box-shadow: 0 4px 14px rgba(231, 111, 81, 0.25);
-  transition: transform 150ms, box-shadow 150ms;
+  transition: transform 200ms ease, box-shadow 200ms ease;
   cursor: pointer;
+  overflow: hidden;
+}
+
+/* Shine sweep on hover */
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 100%
+  );
+  transition: none;
+}
+
+.btn-primary:hover::before {
+  left: 120%;
+  transition: left 0.5s ease;
+}
+
+/* Arrow animation on hover */
+.btn-primary svg {
+  transition: transform 200ms ease;
+}
+
+.btn-primary:hover svg {
+  animation: arrow-slide 0.4s ease forwards;
+}
+
+@keyframes arrow-slide {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  40% {
+    transform: translateX(6px);
+    opacity: 0;
+  }
+  41% {
+    transform: translateX(-6px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(231, 111, 81, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(231, 111, 81, 0.35);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(231, 111, 81, 0.2);
 }
 
 .cta-note {
