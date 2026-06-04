@@ -184,6 +184,10 @@ export default function Home() {
       >
         <span className="footer-brand">CardForge AI</span>
         <div className="footer-right">
+          <a href="/privacy" className="footer-link">Privacy</a>
+          <span className="footer-sep">·</span>
+          <a href="/terms" className="footer-link">Terms</a>
+          <span className="footer-sep">·</span>
           <span className="footer-copy">© 2026</span>
         </div>
       </motion.footer>
