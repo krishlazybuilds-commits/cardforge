@@ -9,10 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "lucide-react": "latest",
+    "motion": "^12.40.0",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest",
-    "lucide-react": "latest"
+    "react-dom": "latest"
   },
   "devDependencies": {
     "@types/node": "latest",

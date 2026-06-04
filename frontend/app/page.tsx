@@ -2,6 +2,7 @@
 
 import { ArrowRight, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { motion } from "motion/react";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -9,7 +10,12 @@ export default function Home() {
   return (
     <main className="landing">
       {/* Nav */}
-      <nav className="topnav">
+      <motion.nav
+        className="topnav"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         <a className="logo" href="/">
           <img src="/icon.svg" alt="" width={28} height={28} />
           CardForge
@@ -33,7 +39,7 @@ export default function Home() {
         >
           <Menu size={22} />
         </button>
-      </nav>
+      </motion.nav>
 
       {/* Mobile menu overlay */}
       {menuOpen && (
@@ -65,27 +71,65 @@ export default function Home() {
 
       {/* Hero */}
       <section className="hero-section">
-        <div className="hero-left">
-          <p className="kicker">For HR and people teams</p>
-          <h1>
+        <motion.div
+          className="hero-left"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.12, delayChildren: 0.3 } },
+          }}
+        >
+          <motion.p
+            className="kicker"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+            }}
+          >
+            For HR and people teams
+          </motion.p>
+          <motion.h1
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+            }}
+          >
             Branded employee cards,
             <br />
             <em>generated in minutes.</em>
-          </h1>
-          <p className="subtitle">
+          </motion.h1>
+          <motion.p
+            className="subtitle"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+            }}
+          >
             Drop in a photo. Pick a template. Our AI crops the portrait,
             fits it to the layout, and exports a social-ready image.
             No designer needed.
-          </p>
-          <div className="cta-row">
+          </motion.p>
+          <motion.div
+            className="cta-row"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+            }}
+          >
             <a href="mailto:hello@cardforge.ai" className="btn-primary">
               Sign up
               <ArrowRight size={16} />
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="hero-right">
+        <motion.div
+          className="hero-right"
+          initial={{ opacity: 0, x: 60, rotate: 4 }}
+          animate={{ opacity: 1, x: 0, rotate: 0 }}
+          transition={{ duration: 0.8, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
           <div className="showcase">
             <div className="card-generated">
               <div className="card-top-accent" />
@@ -117,16 +161,21 @@ export default function Home() {
             </div>
             <div className="card-behind" aria-hidden="true" />
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Footer */}
-      <footer className="site-footer">
+      <motion.footer
+        className="site-footer"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 1.0 }}
+      >
         <span className="footer-brand">CardForge AI</span>
         <div className="footer-right">
           <span className="footer-copy">© 2026</span>
         </div>
-      </footer>
+      </motion.footer>
     </main>
   );
 }
