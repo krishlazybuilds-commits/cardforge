@@ -4,7 +4,7 @@ from os import getenv
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = getenv("DJANGO_SECRET_KEY", "dev-only-secret-key")
-DEBUG = getenv("DJANGO_DEBUG", "True") == "True"
+DEBUG = getenv("DJANGO_DEBUG", "False") == "True"
 ALLOWED_HOSTS = [
     host.strip()
     for host in getenv("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
