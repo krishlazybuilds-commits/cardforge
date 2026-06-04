@@ -3,12 +3,14 @@
 import { ArrowRight, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion } from "motion/react";
+import Preloader from "./preloader";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <main className="landing">
+    <Preloader>
+      <main className="landing">
       {/* Nav */}
       <motion.nav
         className="topnav"
@@ -23,6 +25,9 @@ export default function Home() {
 
         {/* Desktop links */}
         <div className="nav-right">
+          <a href="/contact" className="nav-link">
+            Contact
+          </a>
           <a href="mailto:hello@cardforge.ai" className="nav-link">
             Sign in
           </a>
@@ -51,6 +56,13 @@ export default function Home() {
           >
             <X size={22} />
           </button>
+          <a
+            href="/contact"
+            className="mobile-menu-link"
+            onClick={() => setMenuOpen(false)}
+          >
+            Contact
+          </a>
           <a
             href="mailto:hello@cardforge.ai"
             className="mobile-menu-link"
@@ -177,5 +189,6 @@ export default function Home() {
         </div>
       </motion.footer>
     </main>
+    </Preloader>
   );
 }
