@@ -758,7 +758,10 @@ h1 em {
 
 .preloader {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -771,6 +774,10 @@ h1 em {
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .preloader-logo img {
