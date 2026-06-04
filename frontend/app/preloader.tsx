@@ -17,7 +17,15 @@ export default function Preloader({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2200);
+    const hasVisited = sessionStorage.getItem("cardforge-visited");
+    if (hasVisited) {
+      setLoading(false);
+      return;
+    }
+    const timer = setTimeout(() => {
+      setLoading(false);
+      sessionStorage.setItem("cardforge-visited", "true");
+    }, 2200);
     return () => clearTimeout(timer);
   }, []);
 
