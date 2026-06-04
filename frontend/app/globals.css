@@ -723,6 +723,39 @@ h1 em {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  transition: color 150ms, gap 200ms ease;
+}
+
+.back-link:hover {
+  color: var(--text);
+  gap: 8px;
+}
+
+.back-link svg {
+  transition: transform 200ms ease;
+}
+
+.back-link:hover svg {
+  animation: arrow-slide-left 0.4s ease forwards;
+}
+
+@keyframes arrow-slide-left {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  40% {
+    transform: translateX(-6px);
+    opacity: 0;
+  }
+  41% {
+    transform: translateX(6px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /* Form */
