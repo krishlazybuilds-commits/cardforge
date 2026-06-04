@@ -77,7 +77,7 @@ export default function Contact() {
                 <span>krish.lazybuilds@gmail.com</span>
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/krishlazybuilds-commits"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-link-item"
