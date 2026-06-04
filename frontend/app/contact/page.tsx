@@ -3,6 +3,7 @@
 import { ArrowLeft, Mail, Globe, Send } from "lucide-react";
 import { motion } from "motion/react";
 import { useState } from "react";
+import Preloader from "../preloader";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -22,6 +23,7 @@ export default function Contact() {
   }
 
   return (
+    <Preloader title="Get in Touch" tagline="I'd love to hear from you">
     <main className="landing">
       {/* Nav */}
       <motion.nav
@@ -62,7 +64,7 @@ export default function Contact() {
             }}
           >
             <h1 className="contact-heading">
-              Let&apos;s talk<em>.</em>
+              Let&apos;s talk.
             </h1>
             <p className="contact-description">
               I&apos;m building CardForge solo — whether you have feedback, want to
@@ -161,5 +163,6 @@ export default function Contact() {
         </div>
       </footer>
     </main>
+    </Preloader>
   );
 }

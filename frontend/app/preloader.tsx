@@ -3,15 +3,23 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
-export default function Preloader({ children }: { children: React.ReactNode }) {
+interface PreloaderProps {
+  children: React.ReactNode;
+  title?: string;
+  tagline?: string;
+}
+
+export default function Preloader({
+  children,
+  title = "CardForge",
+  tagline = "Cards that celebrate your people",
+}: PreloaderProps) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2200);
     return () => clearTimeout(timer);
   }, []);
-
-  const brandName = "CardForge";
 
   return (
     <>
@@ -42,7 +50,7 @@ export default function Preloader({ children }: { children: React.ReactNode }) {
                   visible: { transition: { staggerChildren: 0.05, delayChildren: 0.4 } },
                 }}
               >
-                {brandName.split("").map((char, i) => (
+                {title.split("").map((char, i) => (
                   <motion.span
                     key={i}
                     className="preloader-char"
@@ -51,7 +59,7 @@ export default function Preloader({ children }: { children: React.ReactNode }) {
                       visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" } },
                     }}
                   >
-                    {char}
+                    {char === " " ? "\u00A0" : char}
                   </motion.span>
                 ))}
               </motion.div>
@@ -62,7 +70,7 @@ export default function Preloader({ children }: { children: React.ReactNode }) {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 1.2, ease: "easeOut" }}
               >
-                Cards that celebrate your people
+                {tagline}
               </motion.p>
             </div>
           </motion.div>
