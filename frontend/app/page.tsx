@@ -18,12 +18,6 @@ export default function Home() {
         {/* Desktop links */}
         <div className="nav-right">
           <a href="mailto:hello@cardforge.ai" className="nav-link">
-            How it works
-          </a>
-          <a href="mailto:hello@cardforge.ai" className="nav-link">
-            Pricing
-          </a>
-          <a href="mailto:hello@cardforge.ai" className="nav-link">
             Sign in
           </a>
           <a href="mailto:hello@cardforge.ai" className="nav-cta">
@@ -51,20 +45,6 @@ export default function Home() {
           >
             <X size={22} />
           </button>
-          <a
-            href="mailto:hello@cardforge.ai"
-            className="mobile-menu-link"
-            onClick={() => setMenuOpen(false)}
-          >
-            How it works
-          </a>
-          <a
-            href="mailto:hello@cardforge.ai"
-            className="mobile-menu-link"
-            onClick={() => setMenuOpen(false)}
-          >
-            Pricing
-          </a>
           <a
             href="mailto:hello@cardforge.ai"
             className="mobile-menu-link"
@@ -102,7 +82,6 @@ export default function Home() {
               Sign up
               <ArrowRight size={16} />
             </a>
-            <p className="cta-note">Free for teams under 50 employees</p>
           </div>
         </div>
 
