@@ -64,7 +64,7 @@ export default function Contact() {
             }}
           >
             <h1 className="contact-heading">
-              Let&apos;s talk.
+              Let&apos;s talk<span className="dot"></span>
             </h1>
             <p className="contact-description">
               I&apos;m building CardForge solo — whether you have feedback, want to

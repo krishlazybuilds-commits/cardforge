@@ -679,6 +679,16 @@ h1 em {
   color: var(--deep);
 }
 
+.contact-heading .dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-left: 2px;
+  border-radius: 50%;
+  background: var(--sienna);
+  vertical-align: baseline;
+}
+
 .contact-description {
   margin-top: 16px;
   font-size: 16px;
