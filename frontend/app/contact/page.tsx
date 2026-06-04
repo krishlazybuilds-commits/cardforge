@@ -18,7 +18,7 @@ export default function Contact() {
     // Open mailto with pre-filled content
     const subject = encodeURIComponent(`Contact from ${name}`);
     const body = encodeURIComponent(`From: ${name} (${email})\n\n${message}`);
-    window.location.href = `mailto:hello@cardforge.ai?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:krish.lazybuilds@gmail.com?subject=${subject}&body=${body}`;
     setSubmitted(true);
   }
 
@@ -72,9 +72,9 @@ export default function Contact() {
             </p>
 
             <div className="contact-links">
-              <a href="mailto:hello@cardforge.ai" className="contact-link-item">
+              <a href="mailto:krish.lazybuilds@gmail.com" className="contact-link-item">
                 <Mail size={18} />
-                <span>hello@cardforge.ai</span>
+                <span>krish.lazybuilds@gmail.com</span>
               </a>
               <a
                 href="https://github.com"
