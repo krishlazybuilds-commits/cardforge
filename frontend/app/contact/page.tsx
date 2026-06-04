@@ -85,15 +85,6 @@ export default function Contact() {
                 <Globe size={18} />
                 <span>GitHub</span>
               </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="contact-link-item"
-              >
-                <Globe size={18} />
-                <span>LinkedIn</span>
-              </a>
             </div>
           </motion.div>
 
